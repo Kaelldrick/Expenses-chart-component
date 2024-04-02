@@ -1,0 +1,66 @@
+.content__table {
+    margin-top: 68px;
+    width: 100%;
+
+    @media screen and (width<=600px) {
+        & {
+            margin-top: 52px;
+        }
+    }
+
+    & .content__chart {
+        display: flex;
+        column-gap: 18px;
+
+        @media screen and (width<=600px) {
+            & {
+                column-gap: 12px;
+
+            }
+        }
+
+        & .content__row {
+            display: flex;
+            flex-direction: column-reverse;
+
+            & td:nth-child(2n+1) {
+                text-align: center;
+                color: var(--Medium_brown);
+            }
+
+            & td:nth-child(2n) {
+                background-color: var(--Soft_red);
+                width: 50px;
+                border-radius: 5px;
+                position: relative;
+
+                @media screen and (width<=600px) {
+                    & {
+                        width: 32px;
+                    }
+                }
+
+                &:hover {
+                    opacity: 0.7;
+
+                    &::before {
+                        content: attr(data-content);
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 70px;
+                        height: 40px;
+                        background-color: #382314;
+                        top: -50px;
+                        border-radius: 5px;
+                        color: white;
+                        right: -10px;
+                        font-weight: 700;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}

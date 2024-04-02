@@ -1,0 +1,113 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    & .container__header {
+        background-color: var(--Soft_red);
+        width: 540px;
+        height: 125px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 32px;
+        justify-content: space-between;
+
+        @media screen and (height<=700px) {
+            & {
+                height: 100px;
+
+            }
+        }
+
+        & p:first-child {
+            color: var(--Very_pale_orange);
+        }
+
+        & p:last-child {
+            font-weight: 700;
+            font-size: 32px;
+            color: #fffeff;
+        }
+    }
+
+    & .container__content {
+        width: 540px;
+        height: 512px;
+        background-color: var(--Very_pale_orange);
+        border-radius: 20px;
+        padding: 41px;
+
+        & h2 {
+            font-size: 32px;
+            color: var(--Dark_brown);
+        }
+
+        & .container__result {
+            display: flex;
+            justify-content: space-between;
+            align-items: last baseline;
+
+            & .result__total {
+
+                & p:first-child {
+                    color: var(--Medium_brown);
+                }
+
+                & p:last-child {
+                    color: var(--Dark_brown);
+                    font-weight: 700;
+                    font-size: 48px;
+
+                    @media screen and (width <=600px) {
+                        & {
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+
+            & .result__percentage {
+                & p:first-child {
+                    text-align: right;
+                    font-weight: 700;
+                    color: var(--Dark_brown);
+
+                    @media screen and (width <=600px) {
+                        & {
+                            font-size: 16px;
+                        }
+                    }
+
+                }
+
+                & p:last-child {
+                    color: var(--Medium_brown);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (width <=600px) {
+    .container {
+        & .container__header {
+            width: 343px;
+            height: 96px;
+        }
+
+        & .container__content {
+            width: 343px;
+            height: 420px;
+            padding: 18px;
+
+            & h2 {
+                font-size: 24px;
+            }
+        }
+
+        & hr {
+            margin: 27px 0 !important;
+        }
+    }
+}
